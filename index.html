@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ASAP Mathematics</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="home" class="flex-center flex-column">
+      <h1>ASAP Mathematics</h1>
+      <a class="btn" href="/game.html">Start</a>
+      <a class="btn" href="/highscores.html">High Scores</a>
+      <a class="btn" href="/exit.html">Exit</a>
+
+    </div>
+  </div>
+
+  <!-- Clicking Sounds -->
+  <audio id="clickSound">
+    <source src="clicksound.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Play clicking sound when a button is clicked
+    document.querySelectorAll('.btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const clickSound = document.getElementById('clickSound');
+        clickSound.currentTime = 0;
+        clickSound.play();
+      });
+    });
+  </script>
+</body>
+</html>
